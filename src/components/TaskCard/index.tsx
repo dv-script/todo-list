@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import { ITaskList } from "./../../App";
 
 export default function TaskCard({ taskList }: ITaskCard) {
-
   const [currentList, setCurrentList] = useState<ITaskList[]>([]);
 
   function handleFinished(key: number) {
@@ -39,9 +38,13 @@ export default function TaskCard({ taskList }: ITaskCard) {
             checked={item.completed}
             onChange={() => handleFinished(item.id)}
           />
-          <S.TaskCardCheckBoxLabel>
-            {item.completed && <Check size={14} weight="bold" color="var(--gray-200)"/>}
-          </S.TaskCardCheckBoxLabel>
+          {item.completed ? (
+            <S.TaskCardCheckBoxChecked onClick={() => handleFinished(item.id)}>
+              <Check size={16} color="var(--gray-200)" />
+            </S.TaskCardCheckBoxChecked>
+          ): (
+            <S.TaskCardCheckBoxUnchecked onClick={() => handleFinished(item.id)} />
+          )}
           <S.TaskCardText>{item.task}</S.TaskCardText>
           <S.TaskCardDeleteButton onClick={() => handleDelete(item.id)}>
             <Trash size={16} color="var(--gray-300)" />

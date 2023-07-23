@@ -17,7 +17,7 @@ export const TaskCardCheckBox = styled.input`
   display: none;
 `;
 
-export const TaskCardCheckBoxLabel = styled.label`
+export const TaskCardCheckBoxChecked = styled.label`
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -33,7 +33,13 @@ export const TaskCardCheckBoxLabel = styled.label`
   background-color: var(--purple);
 `;
 
+export const TaskCardCheckBoxUnchecked = styled(TaskCardCheckBoxChecked)`
+  background-color: transparent;
+  border: 2px solid var(--blue);
+`;
+
 export const TaskCardText = styled.p`
+  width: 100%;
   color: var(--gray-100);
   font-size: 0.875rem;
   font-weight: 400;
