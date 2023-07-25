@@ -40,7 +40,7 @@ export default function TaskCard({ taskList }: ITaskCard) {
           />
           {item.completed ? (
             <S.TaskCardCheckBoxChecked onClick={() => handleFinished(item.id)}>
-              <Check size={16} color="var(--gray-200)" />
+              <Check size={14} color="var(--gray-200)" weight="bold"/>
             </S.TaskCardCheckBoxChecked>
           ): (
             <S.TaskCardCheckBoxUnchecked onClick={() => handleFinished(item.id)} />
