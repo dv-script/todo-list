@@ -22,7 +22,7 @@ export default function TaskCard({ taskList }: ITaskCard) {
 
   function handleDelete(key: number) {
     const newList = currentList.filter((item) => item.id !== key);
-    setCurrentList(newList);
+    setCurrentList(newList);    
   }
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export default function TaskCard({ taskList }: ITaskCard) {
               <Check size={16} color="var(--gray-200)" />
             </S.TaskCardCheckBoxChecked>
           ): (
-            <S.TaskCardCheckBoxUnchecked onClick={() => handleFinished(item.id)} />
+            <S.TaskCardCheckBoxUnchecked onClick={() => handleFinished(item.id)}  />
           )}
           <S.TaskCardText>{item.task}</S.TaskCardText>
           <S.TaskCardDeleteButton onClick={() => handleDelete(item.id)}>

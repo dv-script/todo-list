@@ -18,7 +18,7 @@ export default function AddNewTask({ taskList }: IAddNewTaskProps ) {
       task: task,
       completed: false,
     });
-    setTask("");
+    setTask("");    
   }
 
   return (
