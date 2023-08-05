@@ -25,7 +25,7 @@ export const TaskCardCheckBoxChecked = styled.label`
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
-  border: none;
+  border: 2px solid var(--purple);
   outline: none;
   background-color: transparent;
   overflow: hidden;
